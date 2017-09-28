@@ -8,5 +8,11 @@ before_install:
   - "npm i -g npm@5.3.0"
 install:
   - "npm install"
-script:
-  - "npm run testunit"
+
+jobs:
+  include:
+    - stage: unit tests
+      script:
+        - "npm run testunit"
+      script:
+        - "npm run testint"

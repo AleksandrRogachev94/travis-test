@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "deploy": "node ./bin/www",
-    "testunit": "./node_modules/mocha/bin/mocha ./test/*.js"
+    "testunit": "./node_modules/mocha/bin/mocha ./test/unit.test.js",
+    "testint": "./node_modules/mocha/bin/mocha ./test/int.test.js"
   },
   "author": "",
   "license": "ISC",
