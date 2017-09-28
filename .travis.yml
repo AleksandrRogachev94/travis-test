@@ -16,7 +16,7 @@ jobs:
   - stage: unit tests
     script:
     - npm run testint
-  -stage: deploying
+  - stage: deploying
     deploy:
       provider: heroku
       api_key:
