@@ -14,6 +14,5 @@ jobs:
     - stage: unit tests
       script:
         - "npm run testunit"
-    - stage: integration tests
       script:
         - "npm run testint"
