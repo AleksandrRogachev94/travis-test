@@ -1,19 +1,26 @@
 language: node_js
 node_js:
-  - "6.11.1"
+- 6.11.1
 cache:
   directories:
-    - "node_modules"
+  - node_modules
 before_install:
-  - "npm i -g npm@5.3.0"
+- npm i -g npm@5.3.0
 install:
-  - "npm install"
-
+- npm install
 jobs:
   include:
-    - stage: unit tests
-      script:
-        - "npm run testunit"
-    - stage: unit tests
-      script:
-        - "npm run testint"
+  - stage: unit tests
+  script:
+    - npm run testunit
+  - stage: unit tests
+  script:
+    - npm run testint
+  -stage: deploying
+  deploy:
+    provider: heroku
+    api_key:
+      secure: QtCyGDSjhlvs5WY7Ge5180FH4EUpTNU97JaD9/7dnNMkPc9746OL726nYiF8I0wE5C382onb3pjjD7dBRR/8w3Y/cMqM9e+3CA3bErpIvPGe7ofV0gL6FzwOHwYGbF4W8MHkb0PTLXt+lD3zfK+jlc0e/ivGJ/niJ6D2IoBIfjU0z/aM8dVH2cMb/4yPLB4OMvkOV3aepeoeofaaCqA2zz7K036O45YayVe1p64r7aYyn++9azS7l+T0O1jLqtDx1dTPQXc0Swm8Xokdl7pUfgw7R0lds1m2KSMZt8QZjhKfgcv/6GCXlH3EUU5Gd7QkdIi1CBdXcu/LUwWM3nDl+BcXJ9vc59cvIPQEVSFRrA1M3Ob3tEpI6BYz7fdK38Nhnp9CTVTCLkS8RxRyqq++u3haclEqJqVIiORzHu2wOb7cbqmuY0IzfrngVhaALDQ1fIvJmNdqNCKL3mi5VkqmrKdXqjp1F3WV4buRZdc007HlJq+HKsrZ4/z1N+pT5Zz9SUtIcO+LTnm6D9iibBwZjn1t5Keaa+xR1RQqIkEhOfgAVMzmqS8SrwerQuCWYr8N1sTyhH3/K8KrTJKCNkTO0+uPzSl7xr/axxbBMeIRb32UmaFoCchriJNzv5XDrCtGl8qFkr+Ssf1It6r+zsDAr/k6IOYlAK7W4XC6HlSuLAk=
+    app: travis-test
+    on:
+      repo: AleksandrRogachev94/travis-test
